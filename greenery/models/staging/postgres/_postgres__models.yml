@@ -55,7 +55,7 @@ models:
         description: "Product ID of event"
 
   - name: stg_postgres__order_items
-    description: "Prepare events table for staging"
+    description: "Prepare order_items table for staging"
     columns:
       - name: order_id
         description: "The primary key for this table"
@@ -68,3 +68,52 @@ models:
           - not_null
       - name: quantity
         description: "Quantity of product ordered"
+
+  - name: stg_postgres__orders
+    description: "Prepare orders table for staging"
+    columns:
+      - name: order_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: "User ID"
+        tests:
+          - not_null
+      - name: promo_id
+        description: "Promo ID, if applicable"
+      - name: address_id
+        description: "User Address"
+        tests:
+          - not_null
+      - name: created_at_utc
+        description: "Datetime of order"
+        tests:
+          - not_null
+      - name: order_cost
+        description: "Purchase cost of order"
+        tests:
+          - not_null
+      - name: shipping_cost
+        description: "Shipping cost of order"
+        tests:
+          - not_null
+      - name: order_total
+        description: "Total cost of order"
+        tests:
+          - not_null
+      - name: tracking_id
+        description: "Tracking ID"
+        tests:
+          - not_null
+      - name: shipping_service
+        description: "Shipping service used for order"
+        tests:
+          - not_null
+      - name: estimated_delivery_at_utc
+        description: "Datetime of expected delivery"
+      - name: delivered_at_utc
+        description: "Datetime (UTC) when order was delivered"
+      - name: order_status
+        description: "Order status"
