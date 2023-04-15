@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_postgres__addresses
+    description: "Prepare addresses table for staging"
+    docs:
+      show: true
+    latest_version: 20230415
+    columns:
+      - name: address_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: address
+        description: "Address: Customer street address"
+      - name: state
+        description: "Address: Customer state"
+      - name: zip_code
+        description: "Address: Customer zipcode"
+      - name: country
+        description: "Address: Customer country"
