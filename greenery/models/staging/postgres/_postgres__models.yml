@@ -158,3 +158,23 @@ models:
         tests:
           - unique
           - not_null
+  - name: stg_postgres__users
+    description: "Prepare users table for staging"
+    columns:
+      - name: user_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: "User first name"
+      - name: last_name
+        description: "User last name"
+      - name: email
+        description: "User email address"
+      - name: created_at_utc
+        description: "User created at datetime (UTC)"
+      - name: updated_at_utc
+        description: "User updated at datetime (UTC)"
+      - name: address_id
+        description: "Unique ID of user address"
