@@ -53,3 +53,18 @@ models:
         description: "Order ID, if ordered or shipped"
       - name: product_id
         description: "Product ID of event"
+
+  - name: stg_postgres__order_items
+    description: "Prepare events table for staging"
+    columns:
+      - name: order_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: product_id
+        description: "Product ID of product ordered"
+        tests:
+          - not_null
+      - name: quantity
+        description: "Quantity of product ordered"
