@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: postgres
+    description: This is a replica of Greenery's postgres prod database.
+    database: raw
+    schema: public
+    tables:
+      - name: addresses
+      - name: events
+      - name: order_times
+      - name: orders
+      - name: products
+      - name: promos
+      - name: users
