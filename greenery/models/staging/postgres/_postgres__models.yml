@@ -117,3 +117,25 @@ models:
         description: "Datetime (UTC) when order was delivered"
       - name: order_status
         description: "Order status"
+
+  - name: stg_postgres__products
+    description: "Prepare products table for staging"
+    columns:
+      - name: product_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: product_name
+        description: "Product name"
+        tests:
+          - unique
+          - not_null
+      - name: price
+        description: "Product price"
+        tests:
+          - not_null
+      - name: inventory
+        description: "Project inventory"
+        tests:
+          - not_null
