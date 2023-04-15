@@ -139,3 +139,22 @@ models:
         description: "Project inventory"
         tests:
           - not_null
+
+  - name: stg_postgres__promos
+    description: "Prepare promos table for staging"
+    columns:
+      - name: promo_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: discount
+        description: "Discount value"
+        tests:
+          - unique
+          - not_null
+      - name: promo_status
+        description: "Status of promo"
+        tests:
+          - unique
+          - not_null
