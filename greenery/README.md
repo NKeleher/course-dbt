@@ -23,5 +23,13 @@ dbt run --models _model_name
 # Linting
 
 ```bash
+# pip install sqlfluff sqlfluff-templater-dbt
 sqlfluff lint models/staging/postgres/*.sql --dialect snowflake
+```
+
+# Docs
+
+```bash
+dbt docs generate
+dbt docs serve --no-browser
 ```
