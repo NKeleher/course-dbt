@@ -3,6 +3,8 @@
 <details>
 <summary>Week 1</summary>
 
+## Week 1 Project Outputs
+
 * I created dbt models in [greenery/models/staging/postgres](https://github.com/NKeleher/course-dbt/tree/main/greenery/models/staging/postgres)
 * All models were run and materialized as views on Snowflake.
 * I set up a [products_snapshot](https://github.com/NKeleher/course-dbt/blob/main/greenery/snapshots/products.sql)
