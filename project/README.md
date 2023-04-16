@@ -10,7 +10,7 @@
 * I set up a [products_snapshot](https://github.com/NKeleher/course-dbt/blob/main/greenery/snapshots/products.sql)
 * Responses to the question prompts
 
-    - _How many users do we have?_
+    > _How many users do we have?_
 
     There are 130 unique users.
 
@@ -20,7 +20,7 @@
     FROM DEV_DB.DBT_NIALLKELEHERGMAILCOM.STG_POSTGRES__USERS;
     ```
 
-    - _On average, how many orders do we receive per hour?_
+    > _On average, how many orders do we receive per hour?_
 
     On average, there were 7.52 orders per hour.
 
@@ -39,7 +39,7 @@
     FROM hourly_orders;
     ```
 
-    - _On average, how long does an order take from being placed to being delivered?_
+    > _On average, how long does an order take from being placed to being delivered?_
 
     On average, orders are delivered in 93.4 hours (approximately 3 days and 21 hours) from the time when the order is created.
 
@@ -50,7 +50,7 @@
     WHERE order_status = 'delivered';
     ```
 
-    - _How many users have only made one purchase? Two purchases? Three+ purchases?_
+    > _How many users have only made one purchase? Two purchases? Three+ purchases?_
     > _Note: you should consider a purchase to be a single order. In other words, if a user places one order for 3 products, they are considered to have made 1 purchase._
 
     There are 25 users with one order. 28 users with two orders. And 71 users have 3 or more purchases.
@@ -75,8 +75,9 @@
     ORDER BY orders_per_user ASC;
     ```
 
-    - _On average, how many unique sessions do we have per hour?_
+    > _On average, how many unique sessions do we have per hour?_
 
+    There are 16.32 sessions per hour.
 
     ```sql
     WITH hourly_sessions AS (
