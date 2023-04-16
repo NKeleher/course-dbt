@@ -1,9 +1,9 @@
-{% snapshot products_snapshot %}
+{% snapshot snapshot_inventory %}
 
 {{
     config(
       target_database='dev_db',
-      target_schema='greenery_snapshots',
+      target_schema='dbt_niallkelehergmailcom',
       unique_key='product_id',
       strategy='check',
       check_cols=['inventory'],
