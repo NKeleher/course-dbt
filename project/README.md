@@ -2,7 +2,6 @@
 
 <details>
     <summary>Week 1 </summary>
-    ## Week 1
 
     - I created dbt models in [greenery/models/staging/postgres](https://github.com/NKeleher/course-dbt/tree/main/greenery/models/staging/postgres)
     - All models were run and materialized as views on Snowflake.
