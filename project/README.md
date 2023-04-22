@@ -92,3 +92,10 @@
     SELECT AVG(sessions_per_hour) FROM hourly_sessions;
     ```
 </details>
+
+<details>
+<summary>Week 2</summary>
+
+## Week 2 Project Outputs
+
+</details>

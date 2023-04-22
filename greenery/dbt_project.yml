@@ -35,3 +35,8 @@ models:
     staging:
       postgres:
         +materialized: view
+
+    marts:
+      core:
+      product:
+      marketing:
