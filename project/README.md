@@ -98,4 +98,43 @@
 
 ## Week 2 Project Outputs
 
+>  What is our user repeat rate?
+> Repeat Rate = Users who purchased 2 or more times / users who purchased
+
+124 users have made at least one purchase; of those 99 have made
+more than one purchase. Thus the repeat rate is 79.8%.
+
+```sql
+WITH user_orders AS (
+    SELECT
+        user_id,
+        COUNT(*) AS order_count
+    FROM DEV_DB.DBT_NIALLKELEHERGMAILCOM.STG_POSTGRES__ORDERS
+    GROUP BY user_id
+    HAVING COUNT(*) > 0
+)
+
+SELECT
+  COUNT(DISTINCT CASE WHEN order_count > 1 THEN user_id
+END) AS repeat_users,
+  COUNT(DISTINCT user_id) AS unique_users,
+  repeat_users / unique_users AS repeat_user_ratio
+FROM user_orders;
+```
+
+> What are good indicators of a user who will likely purchase again? What about indicators of users who are likely NOT to purchase again? If you had more data, what features would you want to look into to answer this question?
+
+I hypothesize that
+- users that have viewed more pages are more likely to make a repeat purchase;
+- users that added items to their cart but have not yet purchased those items are also more likely to make a repeat purchase;
+- users who have their first order delivered prior to or on the day of the expected delivery date are more likely to be a repeat customer.
+
+> Create a marts folder, so we can organize our models
+
+- I created fact tables for product analytics to track the average number of events per session (`greenery/models/marts/product/fct_events_per_session.sql`) and the average number of events per user (`greenery/models/marts/product/fct_events_per_user.sql`)
+
+- I generated docs for the project using `dbt docs generate`
+
+- I ran `dbt snapshot` to update the product inventory snapshot.
+
 </details>

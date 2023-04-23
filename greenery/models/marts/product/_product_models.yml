@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: fct_events_per_session.sql
+    description: "Average events per user session"
+    docs:
+      show: true
+    columns:
+      - name: event_type
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: avg_events
+        description: "Average number of events per user session"
+  - name: fct_events_per_user.sql
+    description: "Average events per user"
+    docs:
+      show: true
+    columns:
+      - name: event_type
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: avg_events
+        description: "Average number of events per user session"
